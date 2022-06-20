@@ -79,7 +79,7 @@ class AngkutanController extends Controller
      * @param  \App\Models\Angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Angkutan $angkutan)
+    public function edit($id)
     {
         $model = Angkutan::find($id);
         return view('dashboard.angkutan.edit', compact ('model'));
