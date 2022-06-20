@@ -1,0 +1,191 @@
+/* custom font from font awesome */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+/* navbar */
+.navbar{
+    background-color: #5a43a0;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* beranda */
+/* *{
+    border: 1px solid;
+} */
+
+section{
+    padding: 2rem 10%;
+    margin-top: -1rem;
+    margin-bottom: -5rem;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 78vh;
+    min-width: 50vw;
+    align-items: center;
+    background: hsl(255, 41%, 45%);
+}  
+
+.home .content {
+    flex: 1 1 10rem;
+    padding-top: 1rem;
+    margin-left: 30px;
+}
+
+.home .image {
+    flex: 1 1 1rem;
+}
+
+
+.home .image img {
+    width: 90%;
+    height: 70%;
+    animation: float 2s linear infinite;
+}
+
+.image img {
+    margin: 10px;
+}
+
+.home .content h3 {
+    color: #facc00;
+}
+
+.home .content h4 {
+    color: #ffff;
+}
+
+/* checking panel */
+.cek {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    /* margin: 10px; */
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+  
+.cek h4 {
+    color: #5a43a0;
+    margin-top: -25px;
+}
+  
+.cek .fa-calendar {
+    font-size: 20px;
+}
+  
+.cek .btn {
+    color: #000;
+    margin-top: 28px;
+    background-color: #facc00;
+}
+  
+.cek .btn:hover {
+    background-color: #3c2c69;
+    color: #fff;
+}
+
+/* regis */
+
+.form-regis {
+    margin-top: 40px;
+}
+.regis h4 {
+    color: #5a43a0;
+}
+
+.form-regis .container .card {
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-color: #5a43a0;
+    box-shadow: #5a43a0;
+}
+
+.form-label {
+    color: #5a43a0;
+    font-weight: bold;
+}
+
+.regis .btn {
+    background-color: #facc00;
+    color: #000;
+    /* width: 25rem; */
+}
+
+.regis .btn:hover {
+    background-color: #3c2c69;
+    color: #fff;
+}
+
+/* login */
+.login{
+    margin-top: 60px;
+}
+.loginbtn {
+    background-color: #facc00;
+    color: #000;
+    /* width: 25rem; */
+}
+
+.loginbtn:hover {
+    background-color: #3c2c69;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    #menu-bar {
+        display: none;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .home {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 80vh;
+        /* min-width: 50vw; */
+        align-items: center;
+        /* font-size: medium; */
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: inline-block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #e5e5e5;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: 0.2rem solid rgba(0, 0, 0, 0.1);
+        border-left: 0.5rem solid var(--red);
+        background: #facc00;
+    }
+}
+
+@media (max-width: 400px) {
+}
