@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rekapitulasi;
+use App\Models\Monitoring;
 use Illuminate\Http\Request;
-use PDF;
-use DB;
 
-class RekapitulasiController extends Controller
+class MonitoringController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if($request->has('search')){
-            $data = Rekapitulasi::where('nama_lengkap','Like', '%' .$request->search .'%')->paginate(5);
-        }
-        else{
-            $data = Rekapitulasi::paginate(5);
-        }
-        return view('dashboard.rekapitulasi.rekapitulasi');
+        return view('dashboard.monitoring.monitoring');
     }
 
     /**
@@ -49,10 +41,10 @@ class RekapitulasiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rekapitulasi  $rekapitulasi
+     * @param  \App\Models\Monitoring  $monitoring
      * @return \Illuminate\Http\Response
      */
-    public function show(Rekapitulasi $rekapitulasi)
+    public function show(Monitoring $monitoring)
     {
         //
     }
@@ -60,10 +52,10 @@ class RekapitulasiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rekapitulasi  $rekapitulasi
+     * @param  \App\Models\Monitoring  $monitoring
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rekapitulasi $rekapitulasi)
+    public function edit(Monitoring $monitoring)
     {
         //
     }
@@ -72,10 +64,10 @@ class RekapitulasiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rekapitulasi  $rekapitulasi
+     * @param  \App\Models\Monitoring  $monitoring
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rekapitulasi $rekapitulasi)
+    public function update(Request $request, Monitoring $monitoring)
     {
         //
     }
@@ -83,19 +75,11 @@ class RekapitulasiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rekapitulasi  $rekapitulasi
+     * @param  \App\Models\Monitoring  $monitoring
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rekapitulasi $rekapitulasi)
+    public function destroy(Monitoring $monitoring)
     {
         //
-    }
-
-    public function eksportrekapitulasi(){
-        $data = Rekapitulasi::all();
-
-        view()->share('data', $data);
-        $pdf = PDF::loadview('dashboard.rekapitulasi.pdf');
-        return $pdf->download('rekapitulasi.pdf');
     }
 }

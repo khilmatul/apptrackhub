@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rekapitulasi extends Model
+class Monitoring extends Model
 {
     use HasFactory;
-
-    protected $table = 'rekapitulasis';
-
-    protected $guarded = '';
 }

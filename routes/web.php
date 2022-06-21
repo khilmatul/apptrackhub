@@ -6,6 +6,8 @@ use App\Http\Controllers\TrayekController;
 use App\Http\Controllers\AngkutanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PenumpangController;
+use App\Http\Controllers\MonitoringController;
+use App\Http\Controllers\RekapitulasiController;
 
 
 Route::get('/', function () {
@@ -35,3 +37,9 @@ Route::get('eksportangkutan', [AngkutanController::class, 'eksportangkutan'])->n
 Route::resource('trayek', TrayekController::class);
 // export PDF
 Route::get('eksporttrayek', [TrayekController::class, 'eksporttrayek'])->name('eksporttrayek');
+
+Route::resource('rekapitulasi', RekapitulasiController::class);
+// export PDF
+Route::get('eksportrekapitulasi', [RekapitulasiController::class, 'eksportrekapitulasi'])->name('eksportrekapitulasi');
+
+Route::resource('monitoring', MonitoringController::class);

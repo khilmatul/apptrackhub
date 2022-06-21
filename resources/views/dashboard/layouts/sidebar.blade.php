@@ -10,7 +10,7 @@
             <a class="nav-link px-3 {{ Request::is('/dashboard') ? 'active' : '' }}" href="/dashboard">
                 <i class="fa fa-gauge fa-lg box-icon" aria-hidden="true"></i>Dashboard
             </a>
-            <a class="nav-link px-3 {{ Request::is('monitoring') ? 'active' : '' }}" href="/monitoring">
+            <a class="nav-link px-3 {{ Request::is('dashboard/monitoring*') ? 'active' : '' }}" href="/monitoring">
                 <i class="fa-solid fa-chart-simple fa-lg box-icon" aria-hidden="true"></i>Monitoring Trayek
             </a>
             <a class="nav-link px-3 {{ Request::is('rekapitulasi') ? 'active' : '' }}" href="/rekapitulasi">
