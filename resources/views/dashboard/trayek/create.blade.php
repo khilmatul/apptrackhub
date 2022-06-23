@@ -16,17 +16,15 @@
           <div class="card-body" >
               <form action="/trayek" method="POST">
                   @csrf
-
                       <div class="mb-2">
                         <label class="form-label" for="nama_trayek">Nama Trayek</label>
-                        <input type="text" id="nama_trayek" name="nama_trayek" class="form-control @error('nama_trayek')is-invalid @enderror" value="{{ old('nama_trayek') }}" required/>                        
+                        <input type="text" id="nama_trayek" name="nama_trayek" class="form-control @error('nama_trayek')is-invalid @enderror" value="{{ 'TRY-'.$kd }}" readonly="" required/>                        
                         @error('nama_trayek')
                         <div class="invalid-feedback">
                           {{ $message}}
                         </div>
                         @enderror
                       </div>
-                               
           
                   <div class="mb-2">
                     <label class="form-label" for="lokasi_berangkat">Lokasi Berangkat</label>

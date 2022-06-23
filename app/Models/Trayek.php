@@ -10,6 +10,9 @@ class Trayek extends Model
     use HasFactory;
 
     protected $table = 'trayeks';
-
     protected $guarded = '';
+
+    public function angkutan(){
+        return $this->hasMany(Angkutan::class);
+    }
 }

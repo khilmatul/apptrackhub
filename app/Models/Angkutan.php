@@ -10,6 +10,14 @@ class Angkutan extends Model
     use HasFactory;
 
     protected $table = 'angkutans';
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'no_polisi','nama_angkutan','sopir','trayek'
+    ];
 
     protected $guarded = '';
+
+    public function trayek(){
+        return $this->belongsTo(Trayek::class);
+    }
 }

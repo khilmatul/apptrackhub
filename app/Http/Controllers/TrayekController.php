@@ -34,18 +34,18 @@ class TrayekController extends Controller
     public function create()
     {
         $model = new Trayek;
-        // $q = DB::table('trayeks')->select(DB::raw('MAX(RIGHT(kode,4)) as kode'));
-        // $kd ="";
-        // if($q->count()>0){
-        //     foreach($q->get() as $k){
-        //         $tmp = ((int)$k->kode)+1;
-        //         $kd = sprintf("%04s", $tmp);
-        //     }
-        // }else{
-        //     $kd = "0001";
-        // }
+        $q = DB::table('trayeks')->select(DB::raw('MAX(RIGHT(nama_trayek,4)) as nama_trayek'));
+        $kd ="";
+        if($q->count()>0){
+            foreach($q->get() as $k){
+                $tmp = ((int)$k->nama_trayek)+1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        }else{
+            $kd = "0001";
+        }
 
-        return view('dashboard.trayek.create', compact ('model'));
+        return view('dashboard.trayek.create', compact ('model', 'kd'));
     }
 
     /**
